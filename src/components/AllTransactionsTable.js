@@ -6,6 +6,7 @@ const AllTransactionsTable = ({ transactions }) => (
     <table>
       <thead>
         <tr>
+          <th>Customer Id</th>
           <th>Customer Name</th>
           <th>Amount</th>
           <th>Date</th>
@@ -14,6 +15,7 @@ const AllTransactionsTable = ({ transactions }) => (
       <tbody>
         {transactions.map(({ customerId, customerName, amount, date }) => (
           <tr key={`${customerId}-${date}`}>
+            <td>{customerId}</td>
             <td>{customerName}</td>
             <td>${amount.toFixed(2)}</td>
             <td>{new Date(date).toLocaleDateString()}</td>
