@@ -1,6 +1,8 @@
 import React from 'react';
 
-const TotalRewardsTable = ({ rewards }) => (
+const TotalRewardsTable = ({ rewards }) => {
+    
+    return(
   <div>
     <h2>Total Rewards for Each Customer (Last 3 Months)</h2>
     <table>
@@ -13,13 +15,14 @@ const TotalRewardsTable = ({ rewards }) => (
       <tbody>
         {Object.entries(rewards).map(([customerId, { customerName, totalPoints }]) => (
           <tr key={customerId}>
-            <td>{customerName}</td>
-            <td>{totalPoints}</td>
+            <td className='text-left'>{customerName}</td>
+            <td className='text-left'>{totalPoints}</td>
           </tr>
         ))}
       </tbody>
     </table>
   </div>
-);
+  )
+}
 
 export default TotalRewardsTable;

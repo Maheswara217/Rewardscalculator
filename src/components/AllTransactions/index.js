@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'
 const AllTransactionsTable = ({ transactions }) => (
   <div>
     <h2>All Transactions</h2>
@@ -15,10 +15,10 @@ const AllTransactionsTable = ({ transactions }) => (
       <tbody>
         {transactions.map(({ customerId, customerName, amount, date }) => (
           <tr key={`${customerId}-${date}`}>
-            <td>{customerId}</td>
-            <td>{customerName}</td>
-            <td>${amount.toFixed(2)}</td>
-            <td>{new Date(date).toLocaleDateString()}</td>
+            <td className='text-left'>{customerId}</td>
+            <td className='text-left'>{customerName}</td>
+            <td className='text-left'>${amount.toFixed(2)}</td>
+            <td className='text-left'>{new Date(date).toLocaleDateString()}</td>
           </tr>
         ))}
       </tbody>

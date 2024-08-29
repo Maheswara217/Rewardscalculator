@@ -15,7 +15,7 @@ export const calculatePoints = (amount) => {
 export const calculateRewardPoints = (transactions) => {
   const rewards = {};
 
-  transactions.forEach(({ customerId, customerName, amount, date }) => {
+  transactions.map(({ customerId, customerName, amount, date }) => {
     const month = new Date(date).toLocaleString('default', { month: 'long', year: 'numeric' });
     const points = calculatePoints(amount);
 
